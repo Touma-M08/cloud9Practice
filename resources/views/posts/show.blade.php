@@ -12,14 +12,20 @@
         <!-- Styles -->
         
     </head>
-        <h1 class="title">
-            {{ $post->title }}
-        </h1>
-        
-        <div class="content">
-            <div class="content__post">
-                <h3>本文</h3>
-                <p>{{ $post->body }}</p>
+        <h1>Blog Name</h1>
+        <p class="edit">
+            <a href="/posts/{{ $post->id }}/edit">edit</a>
+        </p>
+        <div class="post">
+            <h2 class="title">
+                {{ $post->title }}
+            </h2>
+            
+            <div class="content">
+                <div class="content__post">
+                    <h3>本文</h3>
+                    <p>{{ $post->body }}</p>
+                </div>
             </div>
         </div>
         
