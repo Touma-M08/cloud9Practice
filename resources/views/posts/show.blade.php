@@ -16,11 +16,13 @@
         <p class="edit">
             <a href="/posts/{{ $post->id }}/edit">edit</a>
         </p>
+        
         <form action="/posts/{{$post->id}}" id="form__delete" method="post">
             @csrf
             @method("delete")
             <p id="form__delete" onClick="deletePost(this)" style="cursor:pointer">delete</p>
         </form>
+        
         <div class="post">
             <h2 class="title">
                 {{ $post->title }}
