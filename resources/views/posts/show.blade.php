@@ -12,6 +12,10 @@
         <!-- Styles -->
         
     </head>
+    <body>
+        @extends ("layouts.app")
+        
+        @section ("content")
         <h1>Blog Name</h1>
         <p class="edit">
             <a href="/posts/{{ $post->id }}/edit">edit</a>
@@ -27,6 +31,8 @@
             <h2 class="title">
                 {{ $post->title }}
             </h2>
+            
+            <a href="/categories/{{$post->category->id}}">{{$post->category->name}}</a>
             
             <div class="content">
                 <div class="content__post">
@@ -47,7 +53,6 @@
                 }
             }
         </script>
-    <body>
-        
+        @endsection
     </body>
 </html>

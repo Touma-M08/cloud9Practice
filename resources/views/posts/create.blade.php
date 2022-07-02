@@ -13,6 +13,9 @@
         
     </head>
     <body>
+        @extends ("layouts.app")
+        
+        @section("content")
         <h1>Blog Name</h1>
         <form action="/posts" method="post">
             @csrf
@@ -28,11 +31,20 @@
                 <p class="body__error" style="color:red">{{ $errors->first("post.body") }}</p>
             </div>
             
+            <div class="category">
+                <select name="post[category_id]">
+                    @foreach($categories as $category)
+                        <option value="{{$category->id}}">{{$category->name}}</option>
+                    @endforeach
+                </select>
+            </div>
+            
             <input type="submit" value="store" />
             
             <div class="back">
                 <a href="/">back</a>
             </div>
         </form>
+        @endsection
     </body>
 </html>

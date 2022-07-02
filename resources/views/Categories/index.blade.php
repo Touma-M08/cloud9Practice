@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -15,8 +14,7 @@
     <body>
         @extends ("layouts.app")
         
-        @section ("content")
-        <p>{{Auth::user()->name}}</p>
+        @section("content")
         <h1>Blog Name</h1>
         <p class="create">
             <a href="/posts/create">create</a>
@@ -38,17 +36,6 @@
         <div class="paginate">
             {{ $posts->links() }}
         </div>
-        
-        <div>
-            @foreach ($questions as $question)
-                <div>
-                    <a href="https://teratail.com/questions/{{ $question["id"] }}">
-                        {{ $question["title"] }}
-                    </a>
-                </div>
-            @endforeach
-        </div>
-        
         @endsection
     </body>
 </html>

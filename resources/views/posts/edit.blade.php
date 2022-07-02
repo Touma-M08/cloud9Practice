@@ -13,6 +13,9 @@
         
     </head>
     <body>
+        @extends ("layouts.app")
+        
+        @section ("content")
         <h1>edit</h1>
         <form action="/posts/{{ $post->id }}" method="post">
             @csrf
@@ -34,5 +37,6 @@
                 <a href="/posts/{{ $post->id }}">back</a>
             </div>
         </form>
+        @endsection
     </body>
 </html>
